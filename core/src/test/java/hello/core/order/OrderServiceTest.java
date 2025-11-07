@@ -1,4 +1,4 @@
-package hello.core.service;
+package hello.core.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -21,17 +21,20 @@ public class OrderServiceTest {
     @Test
     @DisplayName("주문 생성 테스트")
     void createOrderTest(){
+        // given
         long memberId = 1L;
         String memberName = "memberA";
-        Member member = new Member(memberId,memberName, Grade.VIP);
-        
-        // 멤버를 저장소에 저장
-        memberService.join(member);
 
         String orderItemName = "itemA";
         int orderItemPrice = 10000;
-        Order order = orderService.createOrder(memberId,orderItemName,orderItemPrice);
 
+
+        // when
+        Member member = new Member(memberId,memberName, Grade.VIP);
+        memberService.join(member); // 멤버를 저장소에 저장
+        Order order = orderService.createOrder(memberId,orderItemName,orderItemPrice); // 주문 생성
+
+        // then
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
 }

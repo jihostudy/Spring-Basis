@@ -1,4 +1,4 @@
-package hello.core.service;
+package hello.core.member;
 
 import hello.core.member.domain.Grade;
 import hello.core.member.domain.Member;

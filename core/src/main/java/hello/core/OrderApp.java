@@ -17,6 +17,7 @@ public class OrderApp {
         Long memberId = 1L;
         String memberName = "memberA";
         Member member = new Member(memberId, memberName, Grade.VIP);
+        memberService.join(member);
 
         String orderItemName = "itemA";
         Order order = orderService.createOrder(memberId, orderItemName,10000);
