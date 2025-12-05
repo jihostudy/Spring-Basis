@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+// TODO: static import에 대해 공부 필요
 
 class RateDiscountPolicyTest {
   RateDiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
