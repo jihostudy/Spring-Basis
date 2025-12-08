@@ -14,6 +14,7 @@ public class ApplicationContextInfoTest {
   @DisplayName("모든 빈 출력하기")
   void findAllBean() {
     String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+    // Key : Value 형태로 순회하는 방법
     for (String beanDefinitionName : beanDefinitionNames) {
       Object bean = ac.getBean(beanDefinitionName);
       System.out.println("name=" + beanDefinitionName + " object=" + bean);
@@ -24,6 +25,7 @@ public class ApplicationContextInfoTest {
   @DisplayName("애플리케이션 빈 출력하기")
   void findApplicationBean() {
     String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+    // Key : Value 형태로 순회하는 방법
     for (String beanDefinitionName : beanDefinitionNames) {
       BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
 
